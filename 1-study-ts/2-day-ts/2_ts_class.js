@@ -35,7 +35,7 @@ var Person = /** @class */ (function () {
         this.name = name;
     }
     Person.prototype.play = function () {
-        return '这个人的年龄是' + this.age + this.classType;
+        return '这个人的年龄是' + this.age + Person.classType;
     };
     Person.classType = 'person';
     return Person;
@@ -85,7 +85,15 @@ var Encapsulate = /** @class */ (function () {
     }
     return Encapsulate;
 }());
-console.log(Encapsulate.str1, Encapsulate.str2);
 var obj1 = new Encapsulate();
 console.log(obj1.str1); // 可访问 
-console.log(obj1.str2); // 编译错误， str2 是私有的
+var AgriLoan = /** @class */ (function () {
+    function AgriLoan(interest, rebate, age) {
+        this.interest = interest;
+        this.rebate = rebate;
+        this.age = age;
+    }
+    return AgriLoan;
+}());
+var obj2 = new AgriLoan(10, 1, 1);
+console.log("利润为 : " + obj2.interest + "，抽成为 : " + obj2.rebate);

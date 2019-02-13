@@ -27,7 +27,7 @@ class Person {
       this.name= name
     }
   play():string {
-  return '这个人的年龄是' + this.age + this.classType
+  return '这个人的年龄是' + this.age + Person.classType
   }
   }
   console.log(Person)
@@ -76,21 +76,24 @@ class Encapsulate {
 }
 var obj1 = new Encapsulate() 
 console.log(obj1.str1)     // 可访问 
-console.log(obj1.str2)   // 编译错误， str2 是私有的
+// console.log(obj1.str2)   // 编译错误， str2 是私有的
 
 interface ILoan { 
   interest:number 
+  age: number
 } 
 
 class AgriLoan implements ILoan { 
-  interest; 
+  interest: number; 
   rebate:number 
+  age:number
   
-  constructor(interest:number,rebate:number) { 
+  constructor(interest:number,rebate:number, age: number) { 
      this.interest = interest 
      this.rebate = rebate 
+     this.age =age
   } 
 } 
 
-var obj = new AgriLoan(10,1) 
-console.log("利润为 : "+obj.interest+"，抽成为 : "+obj.rebate )
+var obj2 = new AgriLoan(10,1,1) 
+console.log("利润为 : "+obj2.interest+"，抽成为 : "+obj2.rebate )
