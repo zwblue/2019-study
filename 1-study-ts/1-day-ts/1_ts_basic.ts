@@ -55,5 +55,15 @@ var body: Person ={
   1: '12'
 }
 
-console.log(body)
 
+
+interface Person {
+  age: number
+}
+interface Musician extends Person {
+  instrument: string
+}
+  
+var drummer = <Musician> {}
+drummer.age = 27
+drummer.instrument = 'music'
